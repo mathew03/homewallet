@@ -7,3 +7,15 @@ E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.csproj.CoreCompileInput
 E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.exe
 E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.pdb
 E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.MainForm.resources
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\HomeWallet.exe.config
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\HomeWallet.exe
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\HomeWallet.pdb
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.csprojResolveAssemblyReference.cache
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.MainForm.resources
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.Properties.Resources.resources
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.csproj.GenerateResource.Cache
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.csproj.CoreCompileInputs.cache
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.exe
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.pdb
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.DashboardUC.resources
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.OperationListElement.resources
