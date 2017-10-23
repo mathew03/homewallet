@@ -1,0 +1,9 @@
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\HomeWallet.exe.config
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\HomeWallet.exe
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\HomeWallet.pdb
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.Properties.Resources.resources
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.csproj.GenerateResource.Cache
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.csproj.CoreCompileInputs.cache
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.exe
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.pdb
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.MainForm.resources
