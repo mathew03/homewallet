@@ -19,3 +19,16 @@ E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.exe
 E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.pdb
 E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.DashboardUC.resources
 E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.OperationListElement.resources
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.DashboardUC.resources
+E:\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.OperationListElement.resources
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.dll
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.SqlServer.dll
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.dll
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.EF6.dll
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.Linq.dll
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.xml
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.SqlServer.xml
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.xml
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.dll.config
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\Dapper.dll
+E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\Dapper.xml
