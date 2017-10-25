@@ -1,8 +1,5 @@
 ﻿using HomeWallet.Presenter;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HomeWallet
@@ -15,12 +12,12 @@ namespace HomeWallet
         [STAThread]
         static void Main()
         {
-            HomeWalletRepository repo = new HomeWalletRepository("Data Source=walletdb.db;Version=3");
-            repo.CreateDBIfNotExists();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            MainForm wallet = new MainForm();
+            HomeWalletPresenter presenter = new HomeWalletPresenter(wallet, new HomeWalletRepository("Data Source=wallet.db;Version=3"));
+            Application.Run(wallet);
         }
     }
 }

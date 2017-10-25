@@ -74,7 +74,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\BudgetElement.cs" />
+    <Compile Include="Model\IWalletRepository.cs" />
+    <Compile Include="Model\IWalletView.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Presenter\HomeWalletPresenter.cs" />
     <Compile Include="Presenter\HomeWalletRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

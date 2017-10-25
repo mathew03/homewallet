@@ -32,3 +32,14 @@ E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.xml
 E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.dll.config
 E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\Dapper.dll
 E:\HomeWallet\HomeWallet\HomeWallet\bin\Debug\Dapper.xml
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\Dapper.dll
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.dll
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.dll
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\Dapper.xml
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.xml
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.xml
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.dll.config

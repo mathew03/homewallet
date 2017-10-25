@@ -72,6 +72,8 @@ namespace HomeWallet.View
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,7 +108,7 @@ namespace HomeWallet.View
             legend1.Name = "Legend1";
             legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(757, 3);
+            this.chart1.Location = new System.Drawing.Point(757, 32);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
@@ -122,7 +124,7 @@ namespace HomeWallet.View
             series1.Legend = "Legend1";
             series1.Name = "IncomeOutgo";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(521, 503);
+            this.chart1.Size = new System.Drawing.Size(521, 477);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart_balance";
             this.chart1.PostPaint += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ChartPaintEventArgs>(this.chart1_PostPaint);
@@ -505,11 +507,12 @@ namespace HomeWallet.View
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label18);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(610, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(241, 114);
+            this.panel5.Size = new System.Drawing.Size(241, 150);
             this.panel5.TabIndex = 3;
             // 
             // label8
@@ -536,11 +539,12 @@ namespace HomeWallet.View
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Location = new System.Drawing.Point(364, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(240, 114);
+            this.panel4.Size = new System.Drawing.Size(240, 166);
             this.panel4.TabIndex = 2;
             // 
             // label6
@@ -561,9 +565,31 @@ namespace HomeWallet.View
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(12, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 39);
+            this.label7.Size = new System.Drawing.Size(97, 39);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Cel:";
+            this.label7.Text = "Cele:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(13, 100);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(156, 31);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "1450 / 5000";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(15, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(89, 31);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "$5000";
             // 
             // DashboardUC
             // 
@@ -632,5 +658,7 @@ namespace HomeWallet.View
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label15;
     }
 }

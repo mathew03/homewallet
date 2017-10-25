@@ -86,6 +86,11 @@ namespace HomeWallet.View
             flowLayoutPanel1.Controls.Add(new OperationListElement());
             flowLayoutPanel1.Controls.Add(new OperationListElement());
             flowLayoutPanel1.Controls.Add(new OperationListElement());
+
+            foreach (Control item in flowLayoutPanel1.Controls)
+            {
+                item.Width = flowLayoutPanel1.Width - 30;
+            }
         }
 
         private void flowLayoutPanel1_SizeChanged(object sender, EventArgs e)

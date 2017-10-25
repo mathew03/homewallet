@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HomeWallet.View;
+using HomeWallet.Model;
 
 namespace HomeWallet
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IWalletView
     {
+        DashboardUC _dashboard;
         public MainForm()
         {
             InitializeComponent();
-            
+            _dashboard = new DashboardUC();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,6 +39,11 @@ namespace HomeWallet
         private void button_dashboard_Click(object sender, EventArgs e)
         {
             panel1.Controls.Add(new DashboardUC());
+        }
+
+        public DashboardUC GetDashboard()
+        {
+            return _dashboard;
         }
     }
 }
