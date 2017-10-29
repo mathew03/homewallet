@@ -22,6 +22,39 @@ namespace HomeWallet.Presenter
             CreateDBIfNotExists();
         }
 
+        private T GetSingle<T>(string query)
+        {
+            using (var conn = new SQLiteConnection(_connString))
+            {
+                conn.Open();
+                return conn.Query<T>(query).First();
+            }
+        }
+        private List<T> GetMany<T>(string query)
+        {
+            using (var conn = new SQLiteConnection(_connString))
+            {
+                conn.Open();
+                return conn.Query<T>(query).ToList();
+            }
+        }
+        private void Execute(string query)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(_connString))
+                {
+                    conn.Open();
+                    conn.Execute(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
         private void CreateDBIfNotExists()
         {
             try
@@ -48,48 +81,31 @@ namespace HomeWallet.Presenter
                 cmd.ExecuteNonQuery();
             }
         }
+        //************************************************************************************************************************************
+        #region DASHBOARD
+        public List<Transaction> GetOperations() => GetMany<Transaction>($"SELECT * FROM Operations");
+        public void CreateOperation(Transaction op) => Execute($"INSERT INTO Operations () VALUES ();");
+        #endregion
+        //************************************************************************************************************************************
+        #region USERS
+        public List<User> GetUsers() => GetMany<User>("SELECT * FROM Users");
+        public User GetUser(int userId) => GetSingle<User>($"SELECT * FROM Users WHERE ID = {userId}");
+        public void CreateUser(User user) => Execute($"INSERT INTO Users (FirstName, LastName) VALUES ('{user.FirstName}', '{user.LastName}');");
+        public void DeleteUsers(string userIds) => Execute($"DELETE FROM Users WHERE ID IN ({userIds});");
+        public void UpdateUser(User user) => Execute($"UPDATE Users SET FirstName = '{user.FirstName}', LastName = '{user.LastName}' WHERE ID = {user.ID};");
+        #endregion
+        //************************************************************************************************************************************
+        #region CATEGORIES
+        public List<Category> GetCategories() => GetMany<Category>("SELECT * FROM Categories");
+        public void CreateCategory(Category cat) => Execute("INSERT INTO Categories () VALUES ();");
+        public void UpdateCategory(Category cat) => Execute($"UPDATE Categories SET ;");
+        public void DeleteCategory(int catId) => Execute($"DELETE FROM Categories WHERE ID = {catId};");
+        #endregion
+        //************************************************************************************************************************************
+        #region GOALSDEBTS
 
-        public List<User> GetUsers()
-        {
-            using (var conn = new SQLiteConnection(_connString))
-            {
-                conn.Open();
-                return conn.Query<User>("SELECT * FROM Users").ToList();
-            }
-        }
-        public User GetUser(int userId)
-        {
-            using (var conn = new SQLiteConnection(_connString))
-            {
-                conn.Open();
-                return conn.Query<User>($"SELECT * FROM Users WHERE ID = {userId}").First();
-            }
-        }
-        public void CreateUser(User user)
-        {
-            using (var conn = new SQLiteConnection(_connString))
-            {
-                conn.Open();
-                var query = $"INSERT INTO Users (FirstName, LastName, Salary) VALUES ('{user.FirstName}', '{user.LastName}', {user.Salary});";
-                conn.Execute(query);
-            }
-        }
-        public void DeleteUser(int userId)
-        {
-            using (var conn = new SQLiteConnection(_connString))
-            {
-                conn.Open();
-                conn.Execute($"DELETE FROM Users WHERE ID = {userId};");
-            }
-        }
-        public void UpdateUser(User user)
-        {
-            using (var conn = new SQLiteConnection(_connString))
-            {
-                conn.Open();
-                conn.Execute($"UPDATE Users SET FirstName = '{user.FirstName}', LastName = '{user.LastName}', Salary = {user.Salary} WHERE ID = {user.ID};");
-            }
-        }
+        #endregion
+        //************************************************************************************************************************************
 
 
         string tableCreationQuery = @"
@@ -117,13 +133,14 @@ namespace HomeWallet.Presenter
             (
                 ID INTEGER CONSTRAINT PK_USER PRIMARY KEY AUTOINCREMENT,
                 FirstName VARCHAR(250) NOT NULL,
-                LastName VARCHAR(250) NOT NULL,
-                Salary INT NOT NULL
+                LastName VARCHAR(250) NOT NULL
             );
             CREATE TABLE Transactions
             (
                 ID INTEGER CONSTRAINT PK_TRANSACTION PRIMARY KEY AUTOINCREMENT,
+                Title VARCHAR(250),
                 Description VARCHAR(250),
+                Value FLOAT NOT NULL,
                 Date DATE NOT NULL,
                 CategoryId INT CONSTRAINT FK_TRANSACTION_CATEGORY REFERENCES Categories(ID) NOT NULL,
                 UserId INT CONSTRAINT FK_TRANSACTION_USER REFERENCES Users(ID) NOT NULL

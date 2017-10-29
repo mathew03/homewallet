@@ -43,3 +43,6 @@ E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.xml
 E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.xml
 E:\Projects\HomeWallet\HomeWallet\HomeWallet\bin\Debug\System.Data.SQLite.dll.config
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.UsersMgrUC.resources
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.CategoriesMgrUC.resources
+E:\Projects\HomeWallet\HomeWallet\HomeWallet\obj\Debug\HomeWallet.View.GoalsDebtsMgrUC.resources

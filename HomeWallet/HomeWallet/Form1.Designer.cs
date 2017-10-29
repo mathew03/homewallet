@@ -102,8 +102,9 @@ namespace HomeWallet
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 44);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Zadłużenia";
+            this.button3.Text = "Zadłużenia / Cele";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseEnter += new System.EventHandler(this.navigation_buttons_MouseEnter);
             this.button3.MouseLeave += new System.EventHandler(this.navigation_buttons_MouseLeave);
             // 
@@ -121,6 +122,7 @@ namespace HomeWallet
             this.button2.TabIndex = 2;
             this.button2.Text = "Kategorie";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.navigation_buttons_MouseEnter);
             this.button2.MouseLeave += new System.EventHandler(this.navigation_buttons_MouseLeave);
             // 
@@ -138,6 +140,7 @@ namespace HomeWallet
             this.button1.TabIndex = 1;
             this.button1.Text = "Użytkownicy";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.button1.MouseEnter += new System.EventHandler(this.navigation_buttons_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.navigation_buttons_MouseLeave);
             // 

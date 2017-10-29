@@ -30,635 +30,572 @@ namespace HomeWallet.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel_balance = new System.Windows.Forms.Panel();
+            this.label_minusBalance = new System.Windows.Forms.Label();
+            this.label_plusBalance = new System.Windows.Forms.Label();
+            this.label_totalBalance = new System.Windows.Forms.Label();
+            this.label_monthBalance = new System.Windows.Forms.Label();
+            this.panel_dashboard = new System.Windows.Forms.Panel();
+            this.groupBox_newOperation = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button_AddOperation = new System.Windows.Forms.Button();
+            this.textBox_cost = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_description = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_category = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.dateTimePicker_date = new System.Windows.Forms.DateTimePicker();
+            this.groupBox_operations = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel_operations = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBox_user = new System.Windows.Forms.ComboBox();
+            this.label_from = new System.Windows.Forms.Label();
+            this.dateTimePicker_to = new System.Windows.Forms.DateTimePicker();
+            this.label_to = new System.Windows.Forms.Label();
+            this.dateTimePicker_from = new System.Windows.Forms.DateTimePicker();
+            this.linkLabel_newOperation = new System.Windows.Forms.LinkLabel();
+            this.panel_debts = new System.Windows.Forms.Panel();
+            this.label_debt2 = new System.Windows.Forms.Label();
+            this.label_debt1 = new System.Windows.Forms.Label();
+            this.label_debt = new System.Windows.Forms.Label();
+            this.panel_goals = new System.Windows.Forms.Panel();
+            this.label_goal2 = new System.Windows.Forms.Label();
+            this.label_goal1 = new System.Windows.Forms.Label();
+            this.label_goals = new System.Windows.Forms.Label();
+            this.textBox_Title = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox_RUser = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panel_balance.SuspendLayout();
+            this.panel_dashboard.SuspendLayout();
+            this.groupBox_newOperation.SuspendLayout();
+            this.groupBox_operations.SuspendLayout();
+            this.panel_debts.SuspendLayout();
+            this.panel_goals.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Red;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BorderColor = System.Drawing.Color.Empty;
-            chartArea1.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            chartArea1.Position.Auto = false;
-            chartArea1.Position.Height = 79.22356F;
-            chartArea1.Position.Width = 94F;
-            chartArea1.Position.X = 3F;
-            chartArea1.Position.Y = 3F;
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            legend1.ForeColor = System.Drawing.Color.White;
-            legend1.IsTextAutoFit = false;
-            legend1.MaximumAutoSize = 100F;
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.chart1.Legends.Add(legend1);
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.BorderColor = System.Drawing.Color.Empty;
+            chartArea2.BorderWidth = 0;
+            chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 79.22356F;
+            chartArea2.Position.Width = 94F;
+            chartArea2.Position.X = 3F;
+            chartArea2.Position.Y = 3F;
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.IsTextAutoFit = false;
+            legend2.MaximumAutoSize = 100F;
+            legend2.Name = "Legend1";
+            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(757, 32);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series1.BorderColor = System.Drawing.Color.Transparent;
-            series1.BorderWidth = 0;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = System.Drawing.Color.Transparent;
-            series1.CustomProperties = "PieLineColor=Transparent, CollectedColor=Transparent";
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            series1.LabelBorderWidth = 0;
-            series1.Legend = "Legend1";
-            series1.Name = "IncomeOutgo";
-            this.chart1.Series.Add(series1);
+            series2.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series2.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series2.BorderColor = System.Drawing.Color.Transparent;
+            series2.BorderWidth = 0;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Color = System.Drawing.Color.Transparent;
+            series2.CustomProperties = "PieLineColor=Transparent, CollectedColor=Transparent";
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            series2.LabelBorderWidth = 0;
+            series2.Legend = "Legend1";
+            series2.Name = "IncomeOutgo";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(521, 477);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart_balance";
-            this.chart1.PostPaint += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ChartPaintEventArgs>(this.chart1_PostPaint);
             // 
-            // panel1
+            // panel_balance
             // 
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 166);
-            this.panel1.TabIndex = 1;
+            this.panel_balance.Controls.Add(this.label_minusBalance);
+            this.panel_balance.Controls.Add(this.label_plusBalance);
+            this.panel_balance.Controls.Add(this.label_totalBalance);
+            this.panel_balance.Controls.Add(this.label_monthBalance);
+            this.panel_balance.Location = new System.Drawing.Point(3, 3);
+            this.panel_balance.Name = "panel_balance";
+            this.panel_balance.Size = new System.Drawing.Size(355, 166);
+            this.panel_balance.TabIndex = 1;
             // 
-            // label10
+            // label_minusBalance
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(47, 125);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 25);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "- $1000.00";
+            this.label_minusBalance.AutoSize = true;
+            this.label_minusBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_minusBalance.ForeColor = System.Drawing.Color.Red;
+            this.label_minusBalance.Location = new System.Drawing.Point(47, 125);
+            this.label_minusBalance.Name = "label_minusBalance";
+            this.label_minusBalance.Size = new System.Drawing.Size(106, 25);
+            this.label_minusBalance.TabIndex = 3;
+            this.label_minusBalance.Text = "- $1000.00";
             // 
-            // label3
+            // label_plusBalance
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(47, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "+ $5578.89";
+            this.label_plusBalance.AutoSize = true;
+            this.label_plusBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_plusBalance.ForeColor = System.Drawing.Color.Lime;
+            this.label_plusBalance.Location = new System.Drawing.Point(47, 100);
+            this.label_plusBalance.Name = "label_plusBalance";
+            this.label_plusBalance.Size = new System.Drawing.Size(111, 25);
+            this.label_plusBalance.TabIndex = 2;
+            this.label_plusBalance.Text = "+ $5578.89";
             // 
-            // label2
+            // label_totalBalance
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(20, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "= $4578.89";
+            this.label_totalBalance.AutoSize = true;
+            this.label_totalBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_totalBalance.ForeColor = System.Drawing.Color.Lime;
+            this.label_totalBalance.Location = new System.Drawing.Point(20, 58);
+            this.label_totalBalance.Name = "label_totalBalance";
+            this.label_totalBalance.Size = new System.Drawing.Size(150, 31);
+            this.label_totalBalance.TabIndex = 1;
+            this.label_totalBalance.Text = "= $4578.89";
             // 
-            // label1
+            // label_monthBalance
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Saldo: ";
+            this.label_monthBalance.AutoSize = true;
+            this.label_monthBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_monthBalance.ForeColor = System.Drawing.Color.White;
+            this.label_monthBalance.Location = new System.Drawing.Point(19, 10);
+            this.label_monthBalance.Name = "label_monthBalance";
+            this.label_monthBalance.Size = new System.Drawing.Size(123, 39);
+            this.label_monthBalance.TabIndex = 0;
+            this.label_monthBalance.Text = "Saldo: ";
             // 
-            // panel2
+            // panel_dashboard
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.chart1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(1281, 751);
-            this.panel2.TabIndex = 2;
-            this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
+            this.panel_dashboard.AutoScroll = true;
+            this.panel_dashboard.Controls.Add(this.groupBox_newOperation);
+            this.panel_dashboard.Controls.Add(this.groupBox_operations);
+            this.panel_dashboard.Controls.Add(this.linkLabel_newOperation);
+            this.panel_dashboard.Controls.Add(this.panel_debts);
+            this.panel_dashboard.Controls.Add(this.panel_goals);
+            this.panel_dashboard.Controls.Add(this.panel_balance);
+            this.panel_dashboard.Controls.Add(this.chart1);
+            this.panel_dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_dashboard.Location = new System.Drawing.Point(0, 0);
+            this.panel_dashboard.Name = "panel_dashboard";
+            this.panel_dashboard.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.panel_dashboard.Size = new System.Drawing.Size(1281, 751);
+            this.panel_dashboard.TabIndex = 2;
+            this.panel_dashboard.SizeChanged += new System.EventHandler(this.Panel_Dashboard_SizeChanged);
             // 
-            // groupBox1
+            // groupBox_newOperation
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(735, 512);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(532, 226);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nowa operacja";
-            this.groupBox1.Visible = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(220, 24);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(296, 134);
-            this.groupBox2.TabIndex = 21;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dodaj element do operacji";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(53, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(91, 23);
-            this.textBox3.TabIndex = 16;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(150, 30);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(127, 81);
-            this.listView1.TabIndex = 20;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(53, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(91, 23);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(8, 65);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(37, 13);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Kwota";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(8, 36);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 13);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Nazwa";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(53, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.groupBox_newOperation.Controls.Add(this.label2);
+            this.groupBox_newOperation.Controls.Add(this.comboBox_RUser);
+            this.groupBox_newOperation.Controls.Add(this.textBox_Title);
+            this.groupBox_newOperation.Controls.Add(this.label1);
+            this.groupBox_newOperation.Controls.Add(this.label13);
+            this.groupBox_newOperation.Controls.Add(this.button_AddOperation);
+            this.groupBox_newOperation.Controls.Add(this.textBox_cost);
+            this.groupBox_newOperation.Controls.Add(this.label11);
+            this.groupBox_newOperation.Controls.Add(this.richTextBox_description);
+            this.groupBox_newOperation.Controls.Add(this.label12);
+            this.groupBox_newOperation.Controls.Add(this.comboBox_category);
+            this.groupBox_newOperation.Controls.Add(this.label14);
+            this.groupBox_newOperation.Controls.Add(this.dateTimePicker_date);
+            this.groupBox_newOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox_newOperation.ForeColor = System.Drawing.Color.White;
+            this.groupBox_newOperation.Location = new System.Drawing.Point(640, 182);
+            this.groupBox_newOperation.Name = "groupBox_newOperation";
+            this.groupBox_newOperation.Size = new System.Drawing.Size(276, 327);
+            this.groupBox_newOperation.TabIndex = 20;
+            this.groupBox_newOperation.TabStop = false;
+            this.groupBox_newOperation.Text = "Nowa operacja";
+            this.groupBox_newOperation.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(17, 29);
+            this.label13.Location = new System.Drawing.Point(22, 100);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 13);
             this.label13.TabIndex = 9;
             this.label13.Text = "Kategoria";
             // 
-            // button2
+            // button_AddOperation
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(75, 164);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 42);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Zatwierdź";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_AddOperation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.button_AddOperation.FlatAppearance.BorderSize = 0;
+            this.button_AddOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_AddOperation.ForeColor = System.Drawing.Color.White;
+            this.button_AddOperation.Location = new System.Drawing.Point(95, 238);
+            this.button_AddOperation.Name = "button_AddOperation";
+            this.button_AddOperation.Size = new System.Drawing.Size(129, 42);
+            this.button_AddOperation.TabIndex = 19;
+            this.button_AddOperation.Text = "Zatwierdź";
+            this.button_AddOperation.UseVisualStyleBackColor = false;
+            this.button_AddOperation.Click += new System.EventHandler(this.Button_AddOperation_Click);
             // 
-            // textBox1
+            // textBox_cost
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 23);
-            this.textBox1.TabIndex = 3;
+            this.textBox_cost.Location = new System.Drawing.Point(95, 66);
+            this.textBox_cost.Name = "textBox_cost";
+            this.textBox_cost.Size = new System.Drawing.Size(129, 23);
+            this.textBox_cost.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(17, 117);
+            this.label11.Location = new System.Drawing.Point(22, 191);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(28, 13);
             this.label11.TabIndex = 4;
             this.label11.Text = "Opis";
             // 
-            // richTextBox1
+            // richTextBox_description
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(75, 112);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(129, 46);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.richTextBox_description.Location = new System.Drawing.Point(95, 186);
+            this.richTextBox_description.Name = "richTextBox_description";
+            this.richTextBox_description.Size = new System.Drawing.Size(129, 46);
+            this.richTextBox_description.TabIndex = 5;
+            this.richTextBox_description.Text = "";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(17, 60);
+            this.label12.Location = new System.Drawing.Point(22, 72);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 13);
             this.label12.TabIndex = 6;
             this.label12.Text = "Kwota";
             // 
-            // comboBox2
+            // comboBox_category
             // 
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox_category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_category.Items.AddRange(new object[] {
             "Użytkownik"});
-            this.comboBox2.Location = new System.Drawing.Point(75, 24);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(129, 24);
-            this.comboBox2.TabIndex = 8;
+            this.comboBox_category.Location = new System.Drawing.Point(95, 95);
+            this.comboBox_category.Name = "comboBox_category";
+            this.comboBox_category.Size = new System.Drawing.Size(129, 24);
+            this.comboBox_category.TabIndex = 8;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(17, 89);
+            this.label14.Location = new System.Drawing.Point(22, 163);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(30, 13);
             this.label14.TabIndex = 10;
             this.label14.Text = "Data";
             // 
-            // dateTimePicker3
+            // dateTimePicker_date
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(75, 83);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(129, 23);
-            this.dateTimePicker3.TabIndex = 11;
+            this.dateTimePicker_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_date.Location = new System.Drawing.Point(95, 157);
+            this.dateTimePicker_date.Name = "dateTimePicker_date";
+            this.dateTimePicker_date.Size = new System.Drawing.Size(129, 23);
+            this.dateTimePicker_date.TabIndex = 11;
             // 
-            // groupBox3
+            // groupBox_operations
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox_operations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(29, 182);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(685, 556);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Operacje";
+            this.groupBox_operations.Controls.Add(this.flowLayoutPanel_operations);
+            this.groupBox_operations.Controls.Add(this.comboBox_user);
+            this.groupBox_operations.Controls.Add(this.label_from);
+            this.groupBox_operations.Controls.Add(this.dateTimePicker_to);
+            this.groupBox_operations.Controls.Add(this.label_to);
+            this.groupBox_operations.Controls.Add(this.dateTimePicker_from);
+            this.groupBox_operations.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox_operations.ForeColor = System.Drawing.Color.White;
+            this.groupBox_operations.Location = new System.Drawing.Point(29, 182);
+            this.groupBox_operations.Name = "groupBox_operations";
+            this.groupBox_operations.Size = new System.Drawing.Size(685, 556);
+            this.groupBox_operations.TabIndex = 21;
+            this.groupBox_operations.TabStop = false;
+            this.groupBox_operations.Text = "Operacje";
             // 
-            // button3
+            // flowLayoutPanel_operations
             // 
-            this.button3.BackColor = System.Drawing.Color.Green;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(444, 39);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 21);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "CSV Export";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flowLayoutPanel_operations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(19, 77);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(648, 459);
-            this.flowLayoutPanel1.TabIndex = 7;
-            this.flowLayoutPanel1.WrapContents = false;
-            this.flowLayoutPanel1.SizeChanged += new System.EventHandler(this.flowLayoutPanel1_SizeChanged_1);
+            this.flowLayoutPanel_operations.AutoScroll = true;
+            this.flowLayoutPanel_operations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel_operations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.flowLayoutPanel_operations.Location = new System.Drawing.Point(19, 77);
+            this.flowLayoutPanel_operations.Name = "flowLayoutPanel_operations";
+            this.flowLayoutPanel_operations.Size = new System.Drawing.Size(648, 459);
+            this.flowLayoutPanel_operations.TabIndex = 7;
+            this.flowLayoutPanel_operations.WrapContents = false;
             // 
-            // comboBox1
+            // comboBox_user
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox_user.Items.AddRange(new object[] {
             "Użytkownik"});
-            this.comboBox1.Location = new System.Drawing.Point(287, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(129, 21);
-            this.comboBox1.TabIndex = 7;
+            this.comboBox_user.Location = new System.Drawing.Point(287, 39);
+            this.comboBox_user.Name = "comboBox_user";
+            this.comboBox_user.Size = new System.Drawing.Size(129, 21);
+            this.comboBox_user.TabIndex = 7;
             // 
-            // label4
+            // label_from
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(32, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Od";
+            this.label_from.AutoSize = true;
+            this.label_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_from.ForeColor = System.Drawing.Color.White;
+            this.label_from.Location = new System.Drawing.Point(32, 39);
+            this.label_from.Name = "label_from";
+            this.label_from.Size = new System.Drawing.Size(27, 17);
+            this.label_from.TabIndex = 5;
+            this.label_from.Text = "Od";
             // 
-            // dateTimePicker2
+            // dateTimePicker_to
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(184, 39);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(79, 20);
-            this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker_to.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_to.Location = new System.Drawing.Point(184, 39);
+            this.dateTimePicker_to.Name = "dateTimePicker_to";
+            this.dateTimePicker_to.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePicker_to.TabIndex = 4;
             // 
-            // label5
+            // label_to
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(152, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 17);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Do";
+            this.label_to.AutoSize = true;
+            this.label_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_to.ForeColor = System.Drawing.Color.White;
+            this.label_to.Location = new System.Drawing.Point(152, 39);
+            this.label_to.Name = "label_to";
+            this.label_to.Size = new System.Drawing.Size(26, 17);
+            this.label_to.TabIndex = 6;
+            this.label_to.Text = "Do";
             // 
-            // dateTimePicker1
+            // dateTimePicker_from
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(62, 39);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(79, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker_from.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
+            this.dateTimePicker_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_from.Location = new System.Drawing.Point(62, 39);
+            this.dateTimePicker_from.Name = "dateTimePicker_from";
+            this.dateTimePicker_from.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePicker_from.TabIndex = 3;
             // 
-            // linkLabel1
+            // linkLabel_newOperation
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(635, 168);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(79, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Dodaj operację";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel_newOperation.AutoSize = true;
+            this.linkLabel_newOperation.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.linkLabel_newOperation.Location = new System.Drawing.Point(635, 168);
+            this.linkLabel_newOperation.Name = "linkLabel_newOperation";
+            this.linkLabel_newOperation.Size = new System.Drawing.Size(79, 13);
+            this.linkLabel_newOperation.TabIndex = 4;
+            this.linkLabel_newOperation.TabStop = true;
+            this.linkLabel_newOperation.Text = "Dodaj operację";
+            this.linkLabel_newOperation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_NewOperation_LinkClicked);
             // 
-            // panel5
+            // panel_debts
             // 
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(610, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(241, 150);
-            this.panel5.TabIndex = 3;
+            this.panel_debts.Controls.Add(this.label_debt2);
+            this.panel_debts.Controls.Add(this.label_debt1);
+            this.panel_debts.Controls.Add(this.label_debt);
+            this.panel_debts.Location = new System.Drawing.Point(610, 3);
+            this.panel_debts.Name = "panel_debts";
+            this.panel_debts.Size = new System.Drawing.Size(241, 150);
+            this.panel_debts.TabIndex = 3;
             // 
-            // label8
+            // label_debt2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(13, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 31);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "$5000";
+            this.label_debt2.AutoSize = true;
+            this.label_debt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_debt2.ForeColor = System.Drawing.Color.Red;
+            this.label_debt2.Location = new System.Drawing.Point(15, 100);
+            this.label_debt2.Name = "label_debt2";
+            this.label_debt2.Size = new System.Drawing.Size(89, 31);
+            this.label_debt2.TabIndex = 2;
+            this.label_debt2.Text = "$5000";
             // 
-            // label9
+            // label_debt1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(12, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 39);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Zadłużenie:";
+            this.label_debt1.AutoSize = true;
+            this.label_debt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_debt1.ForeColor = System.Drawing.Color.Red;
+            this.label_debt1.Location = new System.Drawing.Point(13, 58);
+            this.label_debt1.Name = "label_debt1";
+            this.label_debt1.Size = new System.Drawing.Size(89, 31);
+            this.label_debt1.TabIndex = 1;
+            this.label_debt1.Text = "$5000";
             // 
-            // panel4
+            // label_debt
             // 
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(364, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(240, 166);
-            this.panel4.TabIndex = 2;
+            this.label_debt.AutoSize = true;
+            this.label_debt.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_debt.ForeColor = System.Drawing.Color.White;
+            this.label_debt.Location = new System.Drawing.Point(12, 10);
+            this.label_debt.Name = "label_debt";
+            this.label_debt.Size = new System.Drawing.Size(194, 39);
+            this.label_debt.TabIndex = 0;
+            this.label_debt.Text = "Zadłużenie:";
             // 
-            // label6
+            // panel_goals
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(13, 58);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 31);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "1450 / 5000";
+            this.panel_goals.Controls.Add(this.label_goal2);
+            this.panel_goals.Controls.Add(this.label_goal1);
+            this.panel_goals.Controls.Add(this.label_goals);
+            this.panel_goals.Location = new System.Drawing.Point(364, 3);
+            this.panel_goals.Name = "panel_goals";
+            this.panel_goals.Size = new System.Drawing.Size(240, 150);
+            this.panel_goals.TabIndex = 2;
             // 
-            // label7
+            // label_goal2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 39);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Cele:";
+            this.label_goal2.AutoSize = true;
+            this.label_goal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_goal2.ForeColor = System.Drawing.Color.Red;
+            this.label_goal2.Location = new System.Drawing.Point(13, 100);
+            this.label_goal2.Name = "label_goal2";
+            this.label_goal2.Size = new System.Drawing.Size(156, 31);
+            this.label_goal2.TabIndex = 2;
+            this.label_goal2.Text = "1450 / 5000";
             // 
-            // label15
+            // label_goal1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(13, 100);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(156, 31);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "1450 / 5000";
+            this.label_goal1.AutoSize = true;
+            this.label_goal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_goal1.ForeColor = System.Drawing.Color.Red;
+            this.label_goal1.Location = new System.Drawing.Point(13, 58);
+            this.label_goal1.Name = "label_goal1";
+            this.label_goal1.Size = new System.Drawing.Size(156, 31);
+            this.label_goal1.TabIndex = 1;
+            this.label_goal1.Text = "1450 / 5000";
             // 
-            // label18
+            // label_goals
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(15, 100);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(89, 31);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "$5000";
+            this.label_goals.AutoSize = true;
+            this.label_goals.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_goals.ForeColor = System.Drawing.Color.White;
+            this.label_goals.Location = new System.Drawing.Point(12, 10);
+            this.label_goals.Name = "label_goals";
+            this.label_goals.Size = new System.Drawing.Size(97, 39);
+            this.label_goals.TabIndex = 0;
+            this.label_goals.Text = "Cele:";
+            // 
+            // textBox_Title
+            // 
+            this.textBox_Title.Location = new System.Drawing.Point(95, 37);
+            this.textBox_Title.Name = "textBox_Title";
+            this.textBox_Title.Size = new System.Drawing.Size(129, 23);
+            this.textBox_Title.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(22, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Tytuł";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(22, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Użytkownik";
+            // 
+            // comboBox_RUser
+            // 
+            this.comboBox_RUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_RUser.Items.AddRange(new object[] {
+            "Użytkownik"});
+            this.comboBox_RUser.Location = new System.Drawing.Point(95, 125);
+            this.comboBox_RUser.Name = "comboBox_RUser";
+            this.comboBox_RUser.Size = new System.Drawing.Size(129, 24);
+            this.comboBox_RUser.TabIndex = 22;
             // 
             // DashboardUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel_dashboard);
             this.Name = "DashboardUC";
             this.Size = new System.Drawing.Size(1281, 751);
+            this.VisibleChanged += new System.EventHandler(this.DashboardUC_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel_balance.ResumeLayout(false);
+            this.panel_balance.PerformLayout();
+            this.panel_dashboard.ResumeLayout(false);
+            this.panel_dashboard.PerformLayout();
+            this.groupBox_newOperation.ResumeLayout(false);
+            this.groupBox_newOperation.PerformLayout();
+            this.groupBox_operations.ResumeLayout(false);
+            this.groupBox_operations.PerformLayout();
+            this.panel_debts.ResumeLayout(false);
+            this.panel_debts.PerformLayout();
+            this.panel_goals.ResumeLayout(false);
+            this.panel_goals.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel_balance;
+        private System.Windows.Forms.Label label_monthBalance;
+        private System.Windows.Forms.Panel panel_dashboard;
+        private System.Windows.Forms.Label label_totalBalance;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_to;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_from;
+        private System.Windows.Forms.Label label_to;
+        private System.Windows.Forms.Label label_from;
+        private System.Windows.Forms.Panel panel_goals;
+        private System.Windows.Forms.Label label_goal1;
+        private System.Windows.Forms.Label label_goals;
+        private System.Windows.Forms.ComboBox comboBox_user;
+        private System.Windows.Forms.Panel panel_debts;
+        private System.Windows.Forms.Label label_debt1;
+        private System.Windows.Forms.Label label_debt;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_operations;
+        private System.Windows.Forms.LinkLabel linkLabel_newOperation;
+        private System.Windows.Forms.TextBox textBox_cost;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox_description;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_date;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBox_category;
+        private System.Windows.Forms.Button button_AddOperation;
+        private System.Windows.Forms.GroupBox groupBox_newOperation;
+        private System.Windows.Forms.GroupBox groupBox_operations;
+        private System.Windows.Forms.Label label_minusBalance;
+        private System.Windows.Forms.Label label_plusBalance;
+        private System.Windows.Forms.Label label_debt2;
+        private System.Windows.Forms.Label label_goal2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox_RUser;
+        private System.Windows.Forms.TextBox textBox_Title;
+        private System.Windows.Forms.Label label1;
     }
 }

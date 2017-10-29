@@ -8,5 +8,10 @@ namespace HomeWallet.Model
 {
     public interface IWalletRepository
     {
+        void CreateUser(User user);
+        List<User> GetUsers();
+        void DeleteUsers(string usersIds);
+        void UpdateUser(User user);
+        List<Category> GetCategories();
     }
 }

@@ -12,6 +12,11 @@ namespace HomeWallet.View
 {
     public partial class OperationListElement : UserControl
     {
+
+        public OperationListElement(string title, string description, string user, float value)
+        {
+            InitializeComponent();
+        }
         public OperationListElement()
         {
             InitializeComponent();
@@ -44,8 +49,6 @@ namespace HomeWallet.View
         {
             panel1.BackColor = Color.FromArgb(0x22, 0x22, 0x22);
         }
-
-
 
         private void panel1_MouseLeave(object sender, EventArgs e)
         {
