@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Linq;
 
 namespace HomeWallet.Model
 {
@@ -6,17 +7,22 @@ namespace HomeWallet.Model
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public Color Color { get; set; }
+        public int Color { get; set; }
 
         public Category()
         {
-
+   
         }
 
-        public Category(string name, Color color)
+        public Category(string name, int color)
         {
             Name = name;
             Color = color;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

@@ -14,20 +14,21 @@ namespace HomeWallet.Presenter
         IWalletView _view;
 
         DashboardUC _dashboardMgr;
-        UsersMgrUC _usersMgr;
-        CategoriesMgrUC _categoriesMgr;
-        GoalsDebtsMgrUC _goalsDebtsMgr;
+        SettingsUC _settings;
+
+        List<Transaction> loadedOperations;
 
         public HomeWalletPresenter(IWalletView view, IWalletRepository repository)
         {
             _view = view;
             _repository = repository;
             _dashboardMgr = _view.GetDashboard();
-            _usersMgr = _view.GetUsersMgr();
-            _categoriesMgr = _view.GetCategoriesMgr();
-            _goalsDebtsMgr = _view.GetGoalsDebtsMgr();
+            _settings = _view.GetSettings();
+            loadedOperations = new List<Transaction>();
 
             BindEvents();
+            LoadUsers(this, null);
+            LoadCategories(this, null);
         }
 
         private void BindEvents()
@@ -38,21 +39,13 @@ namespace HomeWallet.Presenter
             _dashboardMgr.CalculateBalance += CalculateBalance;
             _dashboardMgr.LoadOperations += LoadOperations;
             _dashboardMgr.LoadChartData += LoadChartData;
-            // USERS
-            _usersMgr.AddUser += AddUser;
-            _usersMgr.EditUser += EditUser;
-            _usersMgr.DeleteUsers += DeleteUsers;
-            _usersMgr.LoadUsers += LoadUsers;
-            // CATEGORIES
-            _categoriesMgr.LoadCategories += LoadCategories;
-            _categoriesMgr.AddCategory += AddCategory;
-            _categoriesMgr.EditCategory += EditCategory;
-            _categoriesMgr.DeleteCategories += DeleteCategories;
-            // GOALSDEBTS
-            _goalsDebtsMgr.LoadTargets += LoadTargets;
-            _goalsDebtsMgr.AddTarget += AddTarget;
-            _goalsDebtsMgr.EditTarget += EditTarget;
-            _goalsDebtsMgr.DeleteTargets += DeleteTargets;
+            // SETTINGS
+            _settings.Users.AddUser += AddUser;
+            _settings.Users.EditUser += EditUser;
+            _settings.Users.DeleteUsers += DeleteUsers;
+            _settings.Cattegories.AddCategory += AddCategory;
+            _settings.Cattegories.EditCategory += EditCategory;
+            _settings.Cattegories.DeleteCategories += DeleteCategories;
         }
 
         private void FillDashboardCombos(object sender, EventArgs e)
@@ -63,19 +56,30 @@ namespace HomeWallet.Presenter
 
         //************************************************************************************************************************************
         #region DASHBOARD
-        private void AddOperation(object sender, EventArgs e)
+        private void AddOperation(Transaction operation)
         {
-            
+            _repository.CreateOperation(operation);
+            // TODO: dodac operacje do listy
+            OperationListElement opEl = new OperationListElement();
+
+            if (operation.Date.Month == DateTime.Now.Month)
+                CalculateBalance(this, null);
         }
 
         private void CalculateBalance(object sender, EventArgs e)
         {
-            
+            List<Transaction> ops = _repository.GetMonthOperations();
+
+            float income = ops.Where(x => x.Value > 0).Sum(x => x.Value);
+            float outcome = ops.Where(x => x.Value < 0).Sum(x => x.Value);
+
+            _dashboardMgr.SetBalance(income, outcome);
         }
 
         private void LoadOperations(object sender, EventArgs e)
         {
-           
+            List<Transaction> operations = _repository.GetOperations();
+            // TODO: dodac operacje do listy
         }
 
         private void LoadChartData(object sender, EventArgs e)
@@ -88,7 +92,7 @@ namespace HomeWallet.Presenter
         private void AddUser(User user)
         {
             _repository.CreateUser(user);
-            _usersMgr.ClearTextboxes();
+            _settings.Users.ClearTextboxes();
             LoadUsers(this, null);
         }
 
@@ -110,51 +114,37 @@ namespace HomeWallet.Presenter
 
         private void LoadUsers(object sender, EventArgs e)
         {
-            _usersMgr.SetUsers(_repository.GetUsers());
+            _settings.Users.SetUsers(_repository.GetUsers());
         }
         #endregion
         //************************************************************************************************************************************
         #region CATEGORIES
         private void LoadCategories(object sender, EventArgs e)
         {
-           
+            _settings.Cattegories.SetCategories(_repository.GetCategories());
         }
 
         private void AddCategory(Category category)
         {
-           
+            _repository.CreateCategory(category);
+            _settings.Cattegories.ClearTextboxes();
+            LoadCategories(this, null);
         }
 
         private void EditCategory(Category category)
         {
-            
+            _repository.UpdateCategory(category);
+            LoadCategories(this, null);
         }
 
         private void DeleteCategories(List<Category> categories)
         {
-           
-        }
-        #endregion
-        //************************************************************************************************************************************
-        #region GOALSDEBTS
-        private void LoadTargets(object sender, EventArgs e)
-        {
-            
-        }
+            string catsIds = categories[0].ID.ToString();
+            for (int i = 1; i < categories.Count; i++)
+                catsIds += $", {categories[i].ID}";
 
-        private void AddTarget(Target target)
-        {
-            
-        }
-
-        private void EditTarget(Target target)
-        {
-            
-        }
-
-        private void DeleteTargets(List<Target> targets)
-        {
-            
+            _repository.DeleteCategories(catsIds);
+            LoadCategories(this, null);
         }
         #endregion
         //************************************************************************************************************************************

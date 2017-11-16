@@ -13,5 +13,13 @@ namespace HomeWallet.Model
         void DeleteUsers(string usersIds);
         void UpdateUser(User user);
         List<Category> GetCategories();
+        void CreateCategory(Category cat);
+        void UpdateCategory(Category cat);
+        void DeleteCategories(string catIds);
+
+        void CreateOperation(Transaction op);
+        List<Transaction> GetOperations();
+        List<Transaction> GetMonthOperations();
+
     }
 }

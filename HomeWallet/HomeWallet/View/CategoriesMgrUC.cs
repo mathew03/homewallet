@@ -19,9 +19,6 @@ namespace HomeWallet.View
         public CategoriesMgrUC()
         {
             InitializeComponent();
-            Dock = DockStyle.Fill;
-            Visible = false;
-
             LoadCategories?.Invoke(this, null);
         }
 
@@ -33,7 +30,7 @@ namespace HomeWallet.View
 
         private void Button_AddCategory_Click(object sender, EventArgs e)
         {
-            Category newCat = new Category(textBox_catName.Text, button_color.BackColor);
+            Category newCat = new Category(textBox_catName.Text, button_color.BackColor.ToArgb());
             AddCategory?.Invoke(newCat);
         }
 
@@ -44,7 +41,7 @@ namespace HomeWallet.View
                 return;
 
             cat.Name = textBox_catName.Text;
-            cat.Color = button_color.BackColor;
+            cat.Color = button_color.BackColor.ToArgb();
             EditCategory?.Invoke(cat);
         }
 
@@ -56,5 +53,18 @@ namespace HomeWallet.View
             List<Category> catToDelete = checkedListBox_users.SelectedItems.Cast<Category>().ToList();
             DeleteCategories?.Invoke(catToDelete);
         }
+
+        public void SetCategories(List<Category> categories)
+        {
+            //this.users = users;
+            checkedListBox_users.Items.Clear();
+            checkedListBox_users.Items.AddRange(categories.ToArray());
+        }
+
+        public void ClearTextboxes()
+        {
+            textBox_catName.Clear();
+        }
+
     }
 }

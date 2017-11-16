@@ -95,17 +95,17 @@
     <Compile Include="View\DashboardUC.Designer.cs">
       <DependentUpon>DashboardUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\GoalsDebtsMgrUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\GoalsDebtsMgrUC.Designer.cs">
-      <DependentUpon>GoalsDebtsMgrUC.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\OperationListElement.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\OperationListElement.Designer.cs">
       <DependentUpon>OperationListElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\SettingsUC.Designer.cs">
+      <DependentUpon>SettingsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UsersMgrUC.cs">
       <SubType>UserControl</SubType>
@@ -127,11 +127,11 @@
     <EmbeddedResource Include="View\DashboardUC.resx">
       <DependentUpon>DashboardUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\GoalsDebtsMgrUC.resx">
-      <DependentUpon>GoalsDebtsMgrUC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\OperationListElement.resx">
       <DependentUpon>OperationListElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingsUC.resx">
+      <DependentUpon>SettingsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UsersMgrUC.resx">
       <DependentUpon>UsersMgrUC.cs</DependentUpon>

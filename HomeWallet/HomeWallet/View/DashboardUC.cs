@@ -20,11 +20,11 @@ namespace HomeWallet.View
 
         List<Transaction> chartData = new List<Transaction>();
 
-
+        public delegate void OperationEventHandler(Transaction operation);
         public event EventHandler LoadOperations;
         public event EventHandler LoadChartData;
         public event EventHandler CalculateBalance;
-        public event EventHandler AddOperation;
+        public event OperationEventHandler AddOperation;
         public event EventHandler FillCombos;
 
 
@@ -84,6 +84,10 @@ namespace HomeWallet.View
         {
             comboBox_category.DataSource = cats;
         }
+        public void SetBalance(float income, float outcome)
+        {
+            
+        }
         #endregion
 
 
@@ -97,12 +101,19 @@ namespace HomeWallet.View
 
         private void Button_AddOperation_Click(object sender, EventArgs e)
         {
-            Transaction tr = new Transaction(textBox_Title.Text, richTextBox_description.Text, float.Parse(textBox_cost.Text), dateTimePicker_date.Value, (Category)comboBox_category.SelectedItem,  (User)comboBox_RUser.SelectedItem);
-            AddOperation?.Invoke(this, null);
+            if (!ValidateOperation())
+                return;
+            Transaction operation = new Transaction(textBox_Title.Text, richTextBox_description.Text, float.Parse(textBox_cost.Text), dateTimePicker_date.Value, (Category)comboBox_category.SelectedItem,  (User)comboBox_RUser.SelectedItem);
+            AddOperation?.Invoke(operation);
             groupBox_newOperation.Visible = false;
         }
 
-
+        private bool ValidateOperation()
+        {
+            if (string.IsNullOrEmpty(textBox_Title.Text) || string.IsNullOrEmpty(richTextBox_description.Text) || !float.TryParse(textBox_cost.Text, out float x))
+                return false;
+            return true;
+        }
 
         private void Panel_Dashboard_SizeChanged(object sender, EventArgs e)
         {

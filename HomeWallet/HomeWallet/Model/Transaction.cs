@@ -19,6 +19,10 @@ namespace HomeWallet.Model
         public User User { get; set; }
         public Category Category { get; set; }
 
+        public Transaction()
+        {
+
+        }
 
         public Transaction(string title, string description, float value, DateTime date, Category cat, User user)
         {

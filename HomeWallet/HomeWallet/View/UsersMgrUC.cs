@@ -25,8 +25,6 @@ namespace HomeWallet.View
         public UsersMgrUC()
         {
             InitializeComponent();
-            Dock = DockStyle.Fill;
-            Visible = false;
             LoadUsers?.Invoke(this, null);
         }
 

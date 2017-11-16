@@ -5,8 +5,6 @@ namespace HomeWallet.Model
     public interface IWalletView
     {
         DashboardUC GetDashboard();
-        UsersMgrUC GetUsersMgr();
-        CategoriesMgrUC GetCategoriesMgr();
-        GoalsDebtsMgrUC GetGoalsDebtsMgr();
+        SettingsUC GetSettings();
     }
 }

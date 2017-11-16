@@ -84,7 +84,13 @@ namespace HomeWallet.Presenter
         //************************************************************************************************************************************
         #region DASHBOARD
         public List<Transaction> GetOperations() => GetMany<Transaction>($"SELECT * FROM Operations");
-        public void CreateOperation(Transaction op) => Execute($"INSERT INTO Operations () VALUES ();");
+        public void CreateOperation(Transaction op) => Execute($"INSERT INTO Operations (Title, Description, Value, Date, CategoryId, UserId) VALUES ('{op.Title}', '{op.Description}', {op.Value}, '{op.Date}', {op.CategoryId}, {op.UserId});");
+        public List<Transaction> GetMonthOperations()
+        {
+            DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            string sdate = date.ToShortDateString();
+            return GetMany<Transaction>($"SELECT * FROM Operations WHERE Date > '{sdate}'");
+        }
         #endregion
         //************************************************************************************************************************************
         #region USERS
@@ -97,13 +103,9 @@ namespace HomeWallet.Presenter
         //************************************************************************************************************************************
         #region CATEGORIES
         public List<Category> GetCategories() => GetMany<Category>("SELECT * FROM Categories");
-        public void CreateCategory(Category cat) => Execute("INSERT INTO Categories () VALUES ();");
-        public void UpdateCategory(Category cat) => Execute($"UPDATE Categories SET ;");
-        public void DeleteCategory(int catId) => Execute($"DELETE FROM Categories WHERE ID = {catId};");
-        #endregion
-        //************************************************************************************************************************************
-        #region GOALSDEBTS
-
+        public void CreateCategory(Category cat) => Execute($"INSERT INTO Categories (Name, Color) VALUES ('{cat.Name}', {cat.Color});");
+        public void UpdateCategory(Category cat) => Execute($"UPDATE Categories SET Name = '{cat.Name}', Color = {cat.Color} WHERE ID = {cat.ID};");
+        public void DeleteCategories(string catIds) => Execute($"DELETE FROM Categories WHERE ID IN ({catIds});");
         #endregion
         //************************************************************************************************************************************
 
@@ -135,9 +137,9 @@ namespace HomeWallet.Presenter
                 FirstName VARCHAR(250) NOT NULL,
                 LastName VARCHAR(250) NOT NULL
             );
-            CREATE TABLE Transactions
+            CREATE TABLE Operations
             (
-                ID INTEGER CONSTRAINT PK_TRANSACTION PRIMARY KEY AUTOINCREMENT,
+                ID INTEGER CONSTRAINT PK_OPERATION PRIMARY KEY AUTOINCREMENT,
                 Title VARCHAR(250),
                 Description VARCHAR(250),
                 Value FLOAT NOT NULL,
