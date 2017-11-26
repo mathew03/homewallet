@@ -2,6 +2,7 @@
 using HomeWallet.View;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace HomeWallet.Presenter
         DashboardUC _dashboardMgr;
         SettingsUC _settings;
 
-        List<Transaction> loadedOperations;
+        List<Operation> loadedOperations;
 
         public HomeWalletPresenter(IWalletView view, IWalletRepository repository)
         {
@@ -24,11 +25,14 @@ namespace HomeWallet.Presenter
             _repository = repository;
             _dashboardMgr = _view.GetDashboard();
             _settings = _view.GetSettings();
-            loadedOperations = new List<Transaction>();
+            loadedOperations = new List<Operation>();
 
             BindEvents();
             LoadUsers(this, null);
             LoadCategories(this, null);
+            LoadOperations();
+            LoadChartData();
+            CalculateBalance();
         }
 
         private void BindEvents()
@@ -36,9 +40,6 @@ namespace HomeWallet.Presenter
             // DASHBOARD
             _dashboardMgr.FillCombos += FillDashboardCombos;
             _dashboardMgr.AddOperation += AddOperation;
-            _dashboardMgr.CalculateBalance += CalculateBalance;
-            _dashboardMgr.LoadOperations += LoadOperations;
-            _dashboardMgr.LoadChartData += LoadChartData;
             // SETTINGS
             _settings.Users.AddUser += AddUser;
             _settings.Users.EditUser += EditUser;
@@ -56,36 +57,62 @@ namespace HomeWallet.Presenter
 
         //************************************************************************************************************************************
         #region DASHBOARD
-        private void AddOperation(Transaction operation)
+        private void AddOperation(Operation operation)
         {
             _repository.CreateOperation(operation);
-            // TODO: dodac operacje do listy
-            OperationListElement opEl = new OperationListElement();
+            LoadOperations();
+            LoadChartData();
 
             if (operation.Date.Month == DateTime.Now.Month)
-                CalculateBalance(this, null);
+                CalculateBalance();
         }
 
-        private void CalculateBalance(object sender, EventArgs e)
+        private void CalculateBalance()
         {
-            List<Transaction> ops = _repository.GetMonthOperations();
+            List<Operation> ops = _repository.GetMonthOperations();
 
             float income = ops.Where(x => x.Value > 0).Sum(x => x.Value);
             float outcome = ops.Where(x => x.Value < 0).Sum(x => x.Value);
 
-            _dashboardMgr.SetBalance(income, outcome);
+            _dashboardMgr.SetBalance(income, outcome * (-1));
         }
 
-        private void LoadOperations(object sender, EventArgs e)
+        private void LoadOperations()
         {
-            List<Transaction> operations = _repository.GetOperations();
-            // TODO: dodac operacje do listy
+            List<Operation> operations = _repository.GetOperations().OrderByDescending(x => x.Date).ToList();
+            List<User> users = _repository.GetUsers();
+            List<Category> categories = _repository.GetCategories();
+
+            List<OperationListElement> operationElements = new List<OperationListElement>();
+            foreach (var operation in operations)
+            {
+                User user = users.FirstOrDefault(x => x.ID == operation.UserId);
+                OperationListElement ole = new OperationListElement(operation.Title, operation.Description, $"{user?.FirstName} {user?.LastName}", operation.Value, operation.Date, Color.FromArgb(categories.First(x => x.ID == operation.CategoryId).Color));
+                operationElements.Add(ole);
+            }
+            _dashboardMgr.AddOperationElements(operationElements);
         }
 
-        private void LoadChartData(object sender, EventArgs e)
+        private void LoadChartData()
         {
-            
+            var categories = _repository.GetCategories();
+            var operations = _repository.GetMonthOperations();
+            var chartData = new List<CustomChartData>();
+            var colors = new List<Color>();
+
+            foreach (var category in categories)
+            {
+                if (operations.Where(x => x.CategoryId == category.ID).Count() == 0)
+                    continue;
+                float sum = operations.Where(x => x.CategoryId == category.ID).Sum(x => x.Value);
+                chartData.Add(new CustomChartData(sum, category.Name));
+                colors.Add(Color.FromArgb(category.Color));
+            }
+
+            _dashboardMgr.SetChartData(colors, chartData);
         }
+
+
         #endregion
         //************************************************************************************************************************************
         #region USERS
@@ -139,6 +166,11 @@ namespace HomeWallet.Presenter
 
         private void DeleteCategories(List<Category> categories)
         {
+            foreach (var cat in categories)
+            {
+                if (_repository.OpsAssignedToCategory(cat))
+                    return;
+            }
             string catsIds = categories[0].ID.ToString();
             for (int i = 1; i < categories.Count; i++)
                 catsIds += $", {categories[i].ID}";

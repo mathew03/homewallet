@@ -4,26 +4,15 @@ using System.Drawing;
 using System.Windows.Forms;
 using HomeWallet.Model;
 using System.Globalization;
+using System.Linq;
 
 namespace HomeWallet.View
 {
     public partial class DashboardUC : UserControl
     {
-        Color[] CUSTOM_CHART_COLORS = {
-            Color.FromArgb(0,130,255),
-            Color.FromArgb(36, 100, 166),
-            Color.FromArgb(130, 190, 255),
-            Color.FromArgb(30, 230, 255),
-            Color.FromArgb(0, 165, 185),
-            Color.FromArgb(85, 90, 255)
-        };
+        List<CustomChartData> chartData = new List<CustomChartData>();
 
-        List<Transaction> chartData = new List<Transaction>();
-
-        public delegate void OperationEventHandler(Transaction operation);
-        public event EventHandler LoadOperations;
-        public event EventHandler LoadChartData;
-        public event EventHandler CalculateBalance;
+        public delegate void OperationEventHandler(Operation operation);
         public event OperationEventHandler AddOperation;
         public event EventHandler FillCombos;
 
@@ -35,9 +24,9 @@ namespace HomeWallet.View
             Visible = false;
             InitChart();
             SetCurrentMonthName();
-            LoadOperations?.Invoke(this, null);
-            LoadChartData?.Invoke(this, null);
-            CalculateBalance?.Invoke(this, null);
+
+            dateTimePicker_date.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_date.CustomFormat = "dd/MM/yy HH:mm";
         }
 
         #region PRIVATE HELPERS
@@ -49,30 +38,27 @@ namespace HomeWallet.View
 
         private void InitChart()
         {
-            chart1.PaletteCustomColors = CUSTOM_CHART_COLORS;
             chart1.DataSource = chartData;
-            chart1.Series["IncomeOutgo"].XValueMember = "Title";
-            chart1.Series["IncomeOutgo"].YValueMembers = "Value";
+            chart1.Series["IncomeOutgo"].XValueMember = "CategoryName";
+            chart1.Series["IncomeOutgo"].YValueMembers = "Total";
         }
         #endregion
 
         #region PUBLIC METHODS
         public void AddOperationElements(List<OperationListElement> data)
         {
+            flowLayoutPanel_operations.Controls.Clear();
             foreach (var item in data)
             {
                 flowLayoutPanel_operations.Controls.Add(item);
-                item.Width = flowLayoutPanel_operations.Width - 20;
+                item.Width = flowLayoutPanel_operations.Width - 30;
             }
         }
-        public void AddChartData(List<Transaction> data)
-        {
-            chartData.AddRange(data);
-            chart1.DataBind();
-        }
-        public void SetChartData(List<Transaction> data)
+
+        public void SetChartData(List<Color> colors, List<CustomChartData> data)
         {
             chartData.Clear();
+            chart1.PaletteCustomColors = colors.ToArray();
             chartData.AddRange(data);
             chart1.DataBind();
         }
@@ -86,7 +72,14 @@ namespace HomeWallet.View
         }
         public void SetBalance(float income, float outcome)
         {
-            
+            var total = income - outcome;
+            if (total < 0)
+                label_totalBalance.ForeColor = Color.Red;
+            else
+                label_totalBalance.ForeColor = Color.Lime;
+            label_totalBalance.Text = $"= {total.ToString()} zł";
+            label_plusBalance.Text = $"+ {income.ToString()} zł";
+            label_minusBalance.Text = $"- {outcome.ToString()} zł";
         }
         #endregion
 
@@ -103,23 +96,24 @@ namespace HomeWallet.View
         {
             if (!ValidateOperation())
                 return;
-            Transaction operation = new Transaction(textBox_Title.Text, richTextBox_description.Text, float.Parse(textBox_cost.Text), dateTimePicker_date.Value, (Category)comboBox_category.SelectedItem,  (User)comboBox_RUser.SelectedItem);
+            var value = textBox_cost.Text.Contains("+") ? float.Parse(textBox_cost.Text) : float.Parse("-" + textBox_cost.Text);
+            Operation operation = new Operation(textBox_Title.Text, richTextBox_description.Text, value, dateTimePicker_date.Value, (Category)comboBox_category.SelectedItem,  (User)comboBox_RUser.SelectedItem);
             AddOperation?.Invoke(operation);
             groupBox_newOperation.Visible = false;
         }
 
         private bool ValidateOperation()
         {
-            if (string.IsNullOrEmpty(textBox_Title.Text) || string.IsNullOrEmpty(richTextBox_description.Text) || !float.TryParse(textBox_cost.Text, out float x))
+            if (string.IsNullOrEmpty(textBox_Title.Text) || !float.TryParse(textBox_cost.Text, out float x))
                 return false;
             return true;
         }
 
         private void Panel_Dashboard_SizeChanged(object sender, EventArgs e)
         {
-            if(panel_dashboard.Width > 1300)
+            if(panel_dashboard.Width > 1200)
             {
-                chart1.Location = new Point(1300 - chart1.Width + ((panel_dashboard.Width - 1300) / 2), chart1.Top);
+                chart1.Location = new Point(1200 - chart1.Width + ((panel_dashboard.Width - 1200) / 2), chart1.Top);
             }
         }
 
@@ -130,5 +124,6 @@ namespace HomeWallet.View
                 FillCombos?.Invoke(this, null);
             }
         }
+
     }
 }

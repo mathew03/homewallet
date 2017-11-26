@@ -17,9 +17,10 @@ namespace HomeWallet.Model
         void UpdateCategory(Category cat);
         void DeleteCategories(string catIds);
 
-        void CreateOperation(Transaction op);
-        List<Transaction> GetOperations();
-        List<Transaction> GetMonthOperations();
+        void CreateOperation(Operation op);
+        List<Operation> GetOperations();
+        List<Operation> GetMonthOperations();
+        bool OpsAssignedToCategory(Category categgory);
 
     }
 }

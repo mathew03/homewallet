@@ -2,7 +2,7 @@
 
 namespace HomeWallet
 {
-    partial class MainForm
+    partial class HomeWalletForm
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@ namespace HomeWallet
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1415, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1478, 661);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel_sideMenu
@@ -108,7 +108,7 @@ namespace HomeWallet
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(203, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1209, 655);
+            this.panel1.Size = new System.Drawing.Size(1272, 655);
             this.panel1.TabIndex = 1;
             // 
             // MainForm
@@ -116,8 +116,9 @@ namespace HomeWallet
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1415, 661);
+            this.ClientSize = new System.Drawing.Size(1478, 661);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(1494, 700);
             this.Name = "MainForm";
             this.Text = "Home wallet";
             this.tableLayoutPanel1.ResumeLayout(false);

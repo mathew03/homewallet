@@ -13,9 +13,13 @@ namespace HomeWallet.View
     public partial class OperationListElement : UserControl
     {
 
-        public OperationListElement(string title, string description, string user, float value)
+        public OperationListElement(string title, string description, string user, float value, DateTime date, Color color) : this()
         {
-            InitializeComponent();
+            label_Title.Text = $"{title} [{value}]";
+            label_Description.Text = description;
+            label_Date.Text = date.ToShortDateString();
+            label_User.Text = user;
+            panel_Color.BackColor = color;
         }
         public OperationListElement()
         {
@@ -23,8 +27,6 @@ namespace HomeWallet.View
 
             foreach (Control item in Controls)
             {
-                item.MouseLeave += panel1_MouseLeave;
-                item.MouseEnter += panel1_MouseEnter;
                 SetEv(item);
             }
         }
@@ -42,7 +44,7 @@ namespace HomeWallet.View
 
         private void EditTransaction(object sender, EventArgs e)
         {
-            MessageBox.Show("Edit transaction works!");
+            
         }
 
         private void panel1_MouseEnter(object sender, EventArgs e)

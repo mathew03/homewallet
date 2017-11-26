@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using Dapper;
@@ -22,14 +20,6 @@ namespace HomeWallet.Presenter
             CreateDBIfNotExists();
         }
 
-        private T GetSingle<T>(string query)
-        {
-            using (var conn = new SQLiteConnection(_connString))
-            {
-                conn.Open();
-                return conn.Query<T>(query).First();
-            }
-        }
         private List<T> GetMany<T>(string query)
         {
             using (var conn = new SQLiteConnection(_connString))
@@ -83,19 +73,18 @@ namespace HomeWallet.Presenter
         }
         //************************************************************************************************************************************
         #region DASHBOARD
-        public List<Transaction> GetOperations() => GetMany<Transaction>($"SELECT * FROM Operations");
-        public void CreateOperation(Transaction op) => Execute($"INSERT INTO Operations (Title, Description, Value, Date, CategoryId, UserId) VALUES ('{op.Title}', '{op.Description}', {op.Value}, '{op.Date}', {op.CategoryId}, {op.UserId});");
-        public List<Transaction> GetMonthOperations()
+        public List<Operation> GetOperations() => GetMany<Operation>($"SELECT * FROM Operations");
+        public void CreateOperation(Operation op) => Execute($"INSERT INTO Operations (Title, Description, Value, Date, CategoryId, UserId) VALUES ('{op.Title}', '{op.Description}', {op.Value}, '{op.Date}', {op.CategoryId}, {op.UserId});");
+        public List<Operation> GetMonthOperations()
         {
             DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             string sdate = date.ToShortDateString();
-            return GetMany<Transaction>($"SELECT * FROM Operations WHERE Date > '{sdate}'");
+            return GetMany<Operation>($"SELECT * FROM Operations WHERE Date > '{sdate}'");
         }
         #endregion
         //************************************************************************************************************************************
         #region USERS
         public List<User> GetUsers() => GetMany<User>("SELECT * FROM Users");
-        public User GetUser(int userId) => GetSingle<User>($"SELECT * FROM Users WHERE ID = {userId}");
         public void CreateUser(User user) => Execute($"INSERT INTO Users (FirstName, LastName) VALUES ('{user.FirstName}', '{user.LastName}');");
         public void DeleteUsers(string userIds) => Execute($"DELETE FROM Users WHERE ID IN ({userIds});");
         public void UpdateUser(User user) => Execute($"UPDATE Users SET FirstName = '{user.FirstName}', LastName = '{user.LastName}' WHERE ID = {user.ID};");
@@ -106,6 +95,7 @@ namespace HomeWallet.Presenter
         public void CreateCategory(Category cat) => Execute($"INSERT INTO Categories (Name, Color) VALUES ('{cat.Name}', {cat.Color});");
         public void UpdateCategory(Category cat) => Execute($"UPDATE Categories SET Name = '{cat.Name}', Color = {cat.Color} WHERE ID = {cat.ID};");
         public void DeleteCategories(string catIds) => Execute($"DELETE FROM Categories WHERE ID IN ({catIds});");
+        public bool OpsAssignedToCategory(Category categgory) => GetOperations().Where(x => x.CategoryId == categgory.ID).Count() > 0;
         #endregion
         //************************************************************************************************************************************
 
@@ -116,20 +106,6 @@ namespace HomeWallet.Presenter
 	            ID INTEGER CONSTRAINT PK_CATEGORY PRIMARY KEY AUTOINCREMENT,
 	            Name VARCHAR(100) NOT NULL,
 	            Color INT NOT NULL
-            );
-            CREATE TABLE Goals
-            (
-                ID INTEGER CONSTRAINT PK_GOAL PRIMARY KEY AUTOINCREMENT,
-                Name VARCHAR(250) NOT NULL,
-                Total INT NOT NULL,
-                Collected INT NOT NULL
-            );
-            CREATE TABLE Debts
-            (
-                ID INTEGER CONSTRAINT PK_DEBT PRIMARY KEY AUTOINCREMENT,
-                Name VARCHAR(250) NOT NULL,
-                Total INT NOT NULL,
-                Repaid INT NOT NULL
             );
             CREATE TABLE Users
             (
@@ -143,16 +119,9 @@ namespace HomeWallet.Presenter
                 Title VARCHAR(250),
                 Description VARCHAR(250),
                 Value FLOAT NOT NULL,
-                Date DATE NOT NULL,
+                Date VARCHAR(300) NOT NULL,
                 CategoryId INT CONSTRAINT FK_TRANSACTION_CATEGORY REFERENCES Categories(ID) NOT NULL,
                 UserId INT CONSTRAINT FK_TRANSACTION_USER REFERENCES Users(ID) NOT NULL
-            );
-            CREATE TABLE TransactionItems
-            (
-                ID INTEGER CONSTRAINT PK_GOAL PRIMARY KEY AUTOINCREMENT,
-                Name VARCHAR(250) NOT NULL,
-                Cost INT NOT NULL,
-                TransactionId INT CONSTRAINT FK_TITEM_TRANSACTION REFERENCES Transactions(ID) NOT NULL
             );";
     }
 }

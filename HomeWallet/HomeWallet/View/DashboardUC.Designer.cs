@@ -30,9 +30,9 @@ namespace HomeWallet.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_balance = new System.Windows.Forms.Panel();
             this.label_minusBalance = new System.Windows.Forms.Label();
@@ -56,11 +56,6 @@ namespace HomeWallet.View
             this.dateTimePicker_date = new System.Windows.Forms.DateTimePicker();
             this.groupBox_operations = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel_operations = new System.Windows.Forms.FlowLayoutPanel();
-            this.comboBox_user = new System.Windows.Forms.ComboBox();
-            this.label_from = new System.Windows.Forms.Label();
-            this.dateTimePicker_to = new System.Windows.Forms.DateTimePicker();
-            this.label_to = new System.Windows.Forms.Label();
-            this.dateTimePicker_from = new System.Windows.Forms.DateTimePicker();
             this.linkLabel_newOperation = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel_balance.SuspendLayout();
@@ -73,42 +68,43 @@ namespace HomeWallet.View
             // 
             this.chart1.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Red;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BorderColor = System.Drawing.Color.Empty;
-            chartArea1.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            chartArea1.Position.Auto = false;
-            chartArea1.Position.Height = 79.22356F;
-            chartArea1.Position.Width = 94F;
-            chartArea1.Position.X = 3F;
-            chartArea1.Position.Y = 3F;
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            legend1.ForeColor = System.Drawing.Color.White;
-            legend1.IsTextAutoFit = false;
-            legend1.MaximumAutoSize = 100F;
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(757, 32);
+            chartArea6.BackColor = System.Drawing.Color.Transparent;
+            chartArea6.BorderColor = System.Drawing.Color.Empty;
+            chartArea6.BorderWidth = 0;
+            chartArea6.Name = "ChartArea1";
+            chartArea6.Position.Auto = false;
+            chartArea6.Position.Height = 79.22356F;
+            chartArea6.Position.Width = 94F;
+            chartArea6.Position.X = 3F;
+            chartArea6.Position.Y = 3F;
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Alignment = System.Drawing.StringAlignment.Center;
+            legend6.BackColor = System.Drawing.Color.Transparent;
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            legend6.ForeColor = System.Drawing.Color.White;
+            legend6.IsTextAutoFit = false;
+            legend6.MaximumAutoSize = 100F;
+            legend6.Name = "Legend1";
+            legend6.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.chart1.Legends.Add(legend6);
+            this.chart1.Location = new System.Drawing.Point(748, 26);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series1.BorderColor = System.Drawing.Color.Transparent;
-            series1.BorderWidth = 0;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = System.Drawing.Color.Transparent;
-            series1.CustomProperties = "PieLineColor=Transparent, CollectedColor=Transparent";
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            series1.LabelBorderWidth = 0;
-            series1.Legend = "Legend1";
-            series1.Name = "IncomeOutgo";
-            this.chart1.Series.Add(series1);
+            series6.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series6.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series6.BorderColor = System.Drawing.Color.Transparent;
+            series6.BorderWidth = 0;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.Color = System.Drawing.Color.Transparent;
+            series6.CustomProperties = "PieLineColor=Transparent, CollectedColor=Transparent";
+            series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            series6.IsValueShownAsLabel = true;
+            series6.LabelBorderWidth = 0;
+            series6.Legend = "Legend1";
+            series6.Name = "IncomeOutgo";
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(521, 477);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart_balance";
@@ -129,7 +125,7 @@ namespace HomeWallet.View
             this.label_minusBalance.AutoSize = true;
             this.label_minusBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_minusBalance.ForeColor = System.Drawing.Color.Red;
-            this.label_minusBalance.Location = new System.Drawing.Point(47, 125);
+            this.label_minusBalance.Location = new System.Drawing.Point(52, 125);
             this.label_minusBalance.Name = "label_minusBalance";
             this.label_minusBalance.Size = new System.Drawing.Size(106, 25);
             this.label_minusBalance.TabIndex = 3;
@@ -201,9 +197,9 @@ namespace HomeWallet.View
             this.groupBox_newOperation.Controls.Add(this.dateTimePicker_date);
             this.groupBox_newOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox_newOperation.ForeColor = System.Drawing.Color.White;
-            this.groupBox_newOperation.Location = new System.Drawing.Point(640, 182);
+            this.groupBox_newOperation.Location = new System.Drawing.Point(364, 3);
             this.groupBox_newOperation.Name = "groupBox_newOperation";
-            this.groupBox_newOperation.Size = new System.Drawing.Size(276, 327);
+            this.groupBox_newOperation.Size = new System.Drawing.Size(446, 162);
             this.groupBox_newOperation.TabIndex = 20;
             this.groupBox_newOperation.TabStop = false;
             this.groupBox_newOperation.Text = "Nowa operacja";
@@ -214,7 +210,7 @@ namespace HomeWallet.View
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 130);
+            this.label2.Location = new System.Drawing.Point(227, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 23;
@@ -222,17 +218,18 @@ namespace HomeWallet.View
             // 
             // comboBox_RUser
             // 
+            this.comboBox_RUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_RUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_RUser.Items.AddRange(new object[] {
             "Użytkownik"});
-            this.comboBox_RUser.Location = new System.Drawing.Point(95, 125);
+            this.comboBox_RUser.Location = new System.Drawing.Point(300, 53);
             this.comboBox_RUser.Name = "comboBox_RUser";
             this.comboBox_RUser.Size = new System.Drawing.Size(129, 24);
             this.comboBox_RUser.TabIndex = 22;
             // 
             // textBox_Title
             // 
-            this.textBox_Title.Location = new System.Drawing.Point(95, 37);
+            this.textBox_Title.Location = new System.Drawing.Point(83, 22);
             this.textBox_Title.Name = "textBox_Title";
             this.textBox_Title.Size = new System.Drawing.Size(129, 23);
             this.textBox_Title.TabIndex = 20;
@@ -242,7 +239,7 @@ namespace HomeWallet.View
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 43);
+            this.label1.Location = new System.Drawing.Point(10, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 21;
@@ -253,7 +250,7 @@ namespace HomeWallet.View
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(22, 100);
+            this.label13.Location = new System.Drawing.Point(227, 28);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 13);
             this.label13.TabIndex = 9;
@@ -265,9 +262,9 @@ namespace HomeWallet.View
             this.button_AddOperation.FlatAppearance.BorderSize = 0;
             this.button_AddOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_AddOperation.ForeColor = System.Drawing.Color.White;
-            this.button_AddOperation.Location = new System.Drawing.Point(95, 238);
+            this.button_AddOperation.Location = new System.Drawing.Point(83, 109);
             this.button_AddOperation.Name = "button_AddOperation";
-            this.button_AddOperation.Size = new System.Drawing.Size(129, 42);
+            this.button_AddOperation.Size = new System.Drawing.Size(129, 34);
             this.button_AddOperation.TabIndex = 19;
             this.button_AddOperation.Text = "Zatwierdź";
             this.button_AddOperation.UseVisualStyleBackColor = false;
@@ -275,7 +272,7 @@ namespace HomeWallet.View
             // 
             // textBox_cost
             // 
-            this.textBox_cost.Location = new System.Drawing.Point(95, 66);
+            this.textBox_cost.Location = new System.Drawing.Point(83, 51);
             this.textBox_cost.Name = "textBox_cost";
             this.textBox_cost.Size = new System.Drawing.Size(129, 23);
             this.textBox_cost.TabIndex = 3;
@@ -285,7 +282,7 @@ namespace HomeWallet.View
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(22, 191);
+            this.label11.Location = new System.Drawing.Point(227, 86);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(28, 13);
             this.label11.TabIndex = 4;
@@ -293,9 +290,9 @@ namespace HomeWallet.View
             // 
             // richTextBox_description
             // 
-            this.richTextBox_description.Location = new System.Drawing.Point(95, 186);
+            this.richTextBox_description.Location = new System.Drawing.Point(300, 86);
             this.richTextBox_description.Name = "richTextBox_description";
-            this.richTextBox_description.Size = new System.Drawing.Size(129, 46);
+            this.richTextBox_description.Size = new System.Drawing.Size(129, 57);
             this.richTextBox_description.TabIndex = 5;
             this.richTextBox_description.Text = "";
             // 
@@ -304,7 +301,7 @@ namespace HomeWallet.View
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(22, 72);
+            this.label12.Location = new System.Drawing.Point(10, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 13);
             this.label12.TabIndex = 6;
@@ -312,10 +309,11 @@ namespace HomeWallet.View
             // 
             // comboBox_category
             // 
+            this.comboBox_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_category.Items.AddRange(new object[] {
             "Użytkownik"});
-            this.comboBox_category.Location = new System.Drawing.Point(95, 95);
+            this.comboBox_category.Location = new System.Drawing.Point(300, 23);
             this.comboBox_category.Name = "comboBox_category";
             this.comboBox_category.Size = new System.Drawing.Size(129, 24);
             this.comboBox_category.TabIndex = 8;
@@ -325,7 +323,7 @@ namespace HomeWallet.View
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(22, 163);
+            this.label14.Location = new System.Drawing.Point(10, 86);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(30, 13);
             this.label14.TabIndex = 10;
@@ -333,8 +331,8 @@ namespace HomeWallet.View
             // 
             // dateTimePicker_date
             // 
-            this.dateTimePicker_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_date.Location = new System.Drawing.Point(95, 157);
+            this.dateTimePicker_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_date.Location = new System.Drawing.Point(83, 80);
             this.dateTimePicker_date.Name = "dateTimePicker_date";
             this.dateTimePicker_date.Size = new System.Drawing.Size(129, 23);
             this.dateTimePicker_date.TabIndex = 11;
@@ -344,11 +342,6 @@ namespace HomeWallet.View
             this.groupBox_operations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox_operations.Controls.Add(this.flowLayoutPanel_operations);
-            this.groupBox_operations.Controls.Add(this.comboBox_user);
-            this.groupBox_operations.Controls.Add(this.label_from);
-            this.groupBox_operations.Controls.Add(this.dateTimePicker_to);
-            this.groupBox_operations.Controls.Add(this.label_to);
-            this.groupBox_operations.Controls.Add(this.dateTimePicker_from);
             this.groupBox_operations.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox_operations.ForeColor = System.Drawing.Color.White;
             this.groupBox_operations.Location = new System.Drawing.Point(29, 182);
@@ -365,63 +358,11 @@ namespace HomeWallet.View
             this.flowLayoutPanel_operations.AutoScroll = true;
             this.flowLayoutPanel_operations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel_operations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.flowLayoutPanel_operations.Location = new System.Drawing.Point(19, 77);
+            this.flowLayoutPanel_operations.Location = new System.Drawing.Point(19, 28);
             this.flowLayoutPanel_operations.Name = "flowLayoutPanel_operations";
-            this.flowLayoutPanel_operations.Size = new System.Drawing.Size(648, 459);
+            this.flowLayoutPanel_operations.Size = new System.Drawing.Size(648, 508);
             this.flowLayoutPanel_operations.TabIndex = 7;
             this.flowLayoutPanel_operations.WrapContents = false;
-            // 
-            // comboBox_user
-            // 
-            this.comboBox_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox_user.Items.AddRange(new object[] {
-            "Użytkownik"});
-            this.comboBox_user.Location = new System.Drawing.Point(287, 39);
-            this.comboBox_user.Name = "comboBox_user";
-            this.comboBox_user.Size = new System.Drawing.Size(129, 21);
-            this.comboBox_user.TabIndex = 7;
-            // 
-            // label_from
-            // 
-            this.label_from.AutoSize = true;
-            this.label_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_from.ForeColor = System.Drawing.Color.White;
-            this.label_from.Location = new System.Drawing.Point(32, 39);
-            this.label_from.Name = "label_from";
-            this.label_from.Size = new System.Drawing.Size(27, 17);
-            this.label_from.TabIndex = 5;
-            this.label_from.Text = "Od";
-            // 
-            // dateTimePicker_to
-            // 
-            this.dateTimePicker_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker_to.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_to.Location = new System.Drawing.Point(184, 39);
-            this.dateTimePicker_to.Name = "dateTimePicker_to";
-            this.dateTimePicker_to.Size = new System.Drawing.Size(79, 20);
-            this.dateTimePicker_to.TabIndex = 4;
-            // 
-            // label_to
-            // 
-            this.label_to.AutoSize = true;
-            this.label_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_to.ForeColor = System.Drawing.Color.White;
-            this.label_to.Location = new System.Drawing.Point(152, 39);
-            this.label_to.Name = "label_to";
-            this.label_to.Size = new System.Drawing.Size(26, 17);
-            this.label_to.TabIndex = 6;
-            this.label_to.Text = "Do";
-            // 
-            // dateTimePicker_from
-            // 
-            this.dateTimePicker_from.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
-            this.dateTimePicker_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_from.Location = new System.Drawing.Point(62, 39);
-            this.dateTimePicker_from.Name = "dateTimePicker_from";
-            this.dateTimePicker_from.Size = new System.Drawing.Size(79, 20);
-            this.dateTimePicker_from.TabIndex = 3;
             // 
             // linkLabel_newOperation
             // 
@@ -452,7 +393,6 @@ namespace HomeWallet.View
             this.groupBox_newOperation.ResumeLayout(false);
             this.groupBox_newOperation.PerformLayout();
             this.groupBox_operations.ResumeLayout(false);
-            this.groupBox_operations.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -463,11 +403,6 @@ namespace HomeWallet.View
         private System.Windows.Forms.Label label_monthBalance;
         private System.Windows.Forms.Panel panel_dashboard;
         private System.Windows.Forms.Label label_totalBalance;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_to;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_from;
-        private System.Windows.Forms.Label label_to;
-        private System.Windows.Forms.Label label_from;
-        private System.Windows.Forms.ComboBox comboBox_user;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_operations;
         private System.Windows.Forms.LinkLabel linkLabel_newOperation;
         private System.Windows.Forms.TextBox textBox_cost;

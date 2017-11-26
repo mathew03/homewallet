@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWallet.Model
 {
-    public class Transaction
+    public class Operation
     {
         public int ID { get; set; }
         public string Title { get; set; }
@@ -19,12 +19,12 @@ namespace HomeWallet.Model
         public User User { get; set; }
         public Category Category { get; set; }
 
-        public Transaction()
+        public Operation()
         {
 
         }
 
-        public Transaction(string title, string description, float value, DateTime date, Category cat, User user)
+        public Operation(string title, string description, float value, DateTime date, Category cat, User user)
         {
             Title = title;
             Description = description;

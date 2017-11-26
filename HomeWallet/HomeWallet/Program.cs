@@ -16,7 +16,7 @@ namespace HomeWallet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainForm wallet = new MainForm();
+            HomeWalletForm wallet = new HomeWalletForm();
             HomeWalletPresenter presenter = new HomeWalletPresenter(wallet, new HomeWalletRepository("Data Source=wallet.db;Version=3"));
             Application.Run(wallet);
         }
